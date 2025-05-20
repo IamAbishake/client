@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Button from "../components/Button";
 import { useDispatch } from "react-redux";
-
 import { addToCart } from "../redux/slices/cartSlice";
 import { addToWishList } from "../redux/slices/wishSlice";
 import { Heart } from "lucide-react";
