@@ -14,6 +14,9 @@ const Men = () => {
   const [category, setCategory] = useState("All");
   const [minPrice, setMinPrice] = useState("");
   const [maxPrice, setMaxPrice] = useState("");
+  const React_Url= "https://abi-ecom.onrender.com"
+
+
 
   const dispatch = useDispatch();
 
@@ -24,7 +27,7 @@ const Men = () => {
   const fetchMenProducts = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:5000/api/products?gender=Men`
+        `${React_Url}/api/products?gender=Men`
       );
       setProducts(response.data);
     } catch (error) {

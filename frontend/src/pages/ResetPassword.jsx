@@ -4,6 +4,8 @@ import axios from "axios";
 import { Eye, EyeOff } from "lucide-react"; 
 
 const ResetPassword = () => {
+  const React_Url= "https://abi-ecom.onrender.com"
+
   const { token } = useParams();
   const navigate = useNavigate();
 
@@ -27,7 +29,7 @@ const ResetPassword = () => {
 
     try {
       const res = await axios.post(
-        `http://localhost:5000/api/auth/reset-password/${token}`,
+        `${React_Url}/api/auth/reset-password/${token}`,
         { password }
       );
       setMessage(res.data.message);

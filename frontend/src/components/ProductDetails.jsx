@@ -13,12 +13,14 @@ const ProductDetails = () => {
   const [selectedVariant, setSelectedVariant] = useState(null);
   const dispatch = useDispatch();
   const wishlist = useSelector((state) => state.wish.wishItems);
+  const React_Url= "https://abi-ecom.onrender.com"
+
 
   const isInWishlist = wishlist.some((item) => item._id === product._id);
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/products/${id}`)
+      .get(`${React_Url}/api/products/${id}`)
       .then((res) => {
         setProduct(res.data);
         if (res.data.variants?.length > 0) {

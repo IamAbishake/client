@@ -6,6 +6,8 @@ import { loginSuccess } from '../redux/slices/authSlice';
 import { Eye, EyeOff } from 'lucide-react';
 
 const Login = () => {
+  const React_Url= "https://abi-ecom.onrender.com"
+
   const [form, setForm] = useState({ email: '', password: '' });
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState('');
@@ -23,7 +25,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/login', form, { withCredentials: true });
+      const response = await axios.post(`${React_Url}/api/auth/login`, form, { withCredentials: true });
       dispatch(loginSuccess(response.data));
       navigate('/');
     } catch (err) {

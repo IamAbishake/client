@@ -5,11 +5,12 @@ import { useNavigate } from 'react-router-dom';
 const OtpForgotPassword = () => {
   const [email, setEmail] = useState('');
   const navigate = useNavigate();
+  const React_Url= "https://abi-ecom.onrender.com"
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5000/api/auth/forgotPasswordUsingOtp', { email });
+      await axios.post(`${React_Url}/api/auth/forgotPasswordUsingOtp`, { email });
       localStorage.setItem('resetEmail', email); // Pass to next step
       navigate('/verify-otp');
     } catch (err) {

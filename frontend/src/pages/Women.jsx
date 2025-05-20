@@ -11,6 +11,8 @@ import toast, { Toaster } from "react-hot-toast";
 
 
 const Men = () => {
+  const React_Url= "https://abi-ecom.onrender.com"
+
   const [products, setProducts]= useState([]);
   const [search, setSearch] = useState('');
   const [category, setCategory] = useState('All');
@@ -25,7 +27,7 @@ const Men = () => {
 }, [])
 
 const fetchWomenProducts = async()=>{
-try{const response = await axios.get(`http://localhost:5000/api/products?gender=Women`);
+try{const response = await axios.get(`${React_Url}/api/products?gender=Women`);
 // console.log(response.data);
 setProducts(response.data)
 }catch(error){

@@ -6,6 +6,8 @@ const OtpResetPassword = () => {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [show, setShow] = useState({ new: false, confirm: false });
+  const React_Url= "https://abi-ecom.onrender.com"
+
 
   const email = localStorage.getItem('resetEmail');
   const otp = localStorage.getItem('otp');
@@ -18,7 +20,7 @@ const OtpResetPassword = () => {
     }
 
     try {
-      await axios.post('http://localhost:5000/api/auth/resetPasswordOtp', {
+      await axios.post(`${React_Url}/api/auth/resetPasswordOtp`, {
         email,
         otp,
         newPassword: password,

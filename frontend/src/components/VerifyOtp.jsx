@@ -3,6 +3,8 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
 const VerifyOtp = () => {
+  const React_Url= "https://abi-ecom.onrender.com"
+
   const [otp, setOtp] = useState(['', '', '', '', '', '']);
   const [timer, setTimer] = useState(60);
   const [canResend, setCanResend] = useState(false);
@@ -49,7 +51,7 @@ const VerifyOtp = () => {
     e.preventDefault();
     const fullOtp = otp.join('');
     try {
-      await axios.post('http://localhost:5000/api/auth/verifyEmailOtp', {
+      await axios.post(`${React_Url}/api/auth/verifyEmailOtp`, {
         email,
         otp: fullOtp,
       });
@@ -62,7 +64,7 @@ const VerifyOtp = () => {
 
   const handleResend = async () => {
     try {
-      await axios.post('http://localhost:5000/api/auth/forgotPasswordUsingOtp', { email });
+      await axios.post(`${React_Url}/api/auth/forgotPasswordUsingOtp`, { email });
       setTimer(60);
       setCanResend(false);
     } catch (err) {

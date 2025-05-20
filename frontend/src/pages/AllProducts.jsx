@@ -10,6 +10,9 @@ import toast, { Toaster } from "react-hot-toast";
 
 
 const AllProducts = () => {
+
+  const React_Url= "https://abi-ecom.onrender.com"
+
   const [search, setSearch] = useState("");
   const [products, setProducts] = useState([]);
   const [category, setCategory] = useState("All");
@@ -27,7 +30,7 @@ const AllProducts = () => {
 
   const fetchAllProducts = async () => {
     try {
-      const response = await axios.get(`http://localhost:5000/api/products`);
+      const response = await axios.get(`${React_Url}/api/products`);
       setProducts(response.data);
     } catch (error) {
       console.error(" Product Fetch Error", error);
