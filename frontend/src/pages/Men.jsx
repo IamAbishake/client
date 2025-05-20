@@ -9,12 +9,12 @@ import { Link } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
 
 const Men = () => {
+  const React_Url= "https://abi-ecom.onrender.com"
   const [search, setSearch] = useState("");
   const [products, setProducts] = useState([]);
   const [category, setCategory] = useState("All");
   const [minPrice, setMinPrice] = useState("");
   const [maxPrice, setMaxPrice] = useState("");
-  const React_Url= "https://abi-ecom.onrender.com"
 
 
 
