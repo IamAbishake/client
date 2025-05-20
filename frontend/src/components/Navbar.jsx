@@ -110,7 +110,7 @@ const Navbar = () => {
                 {categories[cat].map((sub) => (
                   <Link
                     key={sub}
-                    to={`/${cat.toLowerCase()}/${sub.toLowerCase()}`}
+                    to={`/${cat.toLowerCase()}`}
                     className="text-sm text-gray-700 hover:text-cyan-600"
                   >
                     {sub}
